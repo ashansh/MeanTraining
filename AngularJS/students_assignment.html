@@ -1,0 +1,53 @@
+<html>
+    <head>
+            <script src = "js/angular.min.js"></script>
+            <script src = "./script_students_assignment.js"></script>
+            <script src = "./class_student_assignments.js"></script>
+    </head>
+    <body ng-App="Objfunc" ng-controller="studentController">
+        <table border="1px">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Subjects
+                </th>
+                <th>
+                    Marks
+                </th>
+                <th>
+                    Total
+                </th>
+                <th>
+                    Average
+                </th>
+            </tr>
+                        <tr ng-repeat="std in students">
+                            <td>
+                                {{std.name}}
+                                
+                            <td>
+                                <ul>
+                                    <li ng-repeat="subjects in std.subjects" >
+                                        {{subjects.name}}
+                                    </li>
+        
+                                
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li ng-repeat="subjects in std.subjects" >
+                                        {{subjects.marks}}
+                                    </li>                                
+                                </ul>
+                                
+                            </td>
+                            <td>{{std.total()}}</td>
+                            <td>{{std.average()}}</td>
+                        </tr>
+                    
+                    Greatest of them: {{compare()}}
+        </body>
+        </html>        

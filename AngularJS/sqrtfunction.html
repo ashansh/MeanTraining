@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="js/angular.min.js"> </script>
+        <script>
+            var app = angular.module("myApp", []);
+            app.controller("myCtrl", function($scope){
+                $scope.sqRoot = function(){
+                    return Math.sqrt($scope.value);
+                
+                }
+                
+                $scope.abs = function(){
+                    return Math.abs($scope.value);
+                }        }     
+            )
+</script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    Enter value <input type="text" ng-model="value" /> <br>
+
+    Square root value : {{ sqRoot() }}
+    Absolute value : {{ abs() }}
+    <!-- <div ng-repeat="employee in employees">
+    {{employee.empId}}
+    {{employee.empName}} -->
+</div>
+</body>
+</html>
