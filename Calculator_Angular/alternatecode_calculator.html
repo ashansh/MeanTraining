@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            AngularJS Sevice Example
+        </title>
+        <script src="js/angular.min.js"></script>
+        <script type="text/javascript">
+        var app = angular.module('angularCustomApp' , []);
+        app.controller('customCtrl', function($scope, Calculator){
+            $scope.Addition = function(){
+            	$scope.result= Calculator.Addition($scope.first, $scope.second);
+               return Calculator.Addition($scope.first, $scope.second);
+            }
+            $scope.Subtraction = function(){
+            	$scope.result= Calculator.Subtraction($scope.first, $scope.second);
+               return Calculator.Subtraction($scope.first, $scope.second);
+            }
+
+
+            $scope.Multiplication = function(){
+            	$scope.result= Calculator.Multiplication($scope.first, $scope.second);
+           		return Calculator.Multiplication($scope.first, $scope.second);
+            }
+
+
+            $scope.Division = function(){
+            	 $scope.result= Calculator.Division($scope.first, $scope.second);
+               return Calculator.Division($scope.first, $scope.second);
+            }
+
+            $scope.Clear = function(){
+            	 $scope.x= Calculator.Clear($scope.first, $scope.second, $scope.result);
+            	 $scope.first="";
+            	 $scope.second="";
+            	 $scope.result="";
+            	 // $scope.result2="";
+            	 // $scope.result3="";
+            	 // $scope.result4="";
+            	 
+
+               return Calculator.Clear($scope.first, $scope.second, $scope.result);
+            }
+
+        });
+
+
+        app.service('Calculator', function(){
+            this.Addition = function(a,b){
+                return a+b;
+            }  
+            this.Subtraction= function(a,b){
+                return a-b;
+                
+            }
+
+
+            this.Multiplication= function(a,b){
+                return a*b;
+            }
+
+
+            this.Division= function(a,b){
+                return a/b;
+         
+            }
+
+            this.Clear= function(a,b,c){
+             	a=""; 
+            	b="";
+          		c=""
+             	return a, b , c;
+            
+
+            	}
+        });
+        </script>
+    </head>
+    <body ng-app="angularCustomApp" ng-controller="customCtrl">
+<div>
+    	Enter First Number:<input type="number" ng-model="first"><br>
+    	Enter Second Number:<input type="number" ng-model="second"><br>
+    	<input type="button" value="Plus"  ng-click="Addition()"><br>
+    	<!-- <input type="number" ng-model="result1"><br> -->
+    	<input type="button" value="Minus" ng-click="Subtraction()"><br>
+    	<!-- <input type="number" ng-model="result2"><br> -->
+    	<!--Subtraction of the no.'s is:{{a}}<br>-->
+    	<input type="button" value="Divide" ng-click="Division()"><br>
+    	<!-- <input type="number" ng-model="result4"><br> -->
+    	<input type="button" value="Multiply"  ng-click="Multiplication()"><br>
+    	<!-- <input type="number" ng-model="result3"><br> -->
+    	<input type="number" ng-model="result"><br>
+    	
+    	<input type="button" value="Clear" ng-model = "result5" ng-click="Clear()"><br>
+
+
+    	
+ </div>
+
+ <div> 
+ </div>
+    </body>
+</html>

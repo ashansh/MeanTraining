@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <script src = "js/angular.min.js" ></script>
+        <script>
+        var app = angular.module("myCalc" , [])
+        app.controller("calCtrl", function($scope , CalcService){
+                $scope.add = function(){
+                    $scope.ans=CalcService.add($scope.Num1, $scope.Num2);
+                    return CalcService.add($scope.Num1, $scope.Num2);
+                }
+
+                $scope.sub = function(){
+                    $scope.ans = CalcService.sub($scope.Num1, $scope.Num2);
+                    return CalcService.sub($scope.Num1, $scope.Num2);
+                }
+
+                
+                $scope.multiply = function(){
+                    $scope.ans = CalcService.multiply($scope.Num1, $scope.Num2);
+                    return CalcService.multiply($scope.Num1, $scope.Num2);
+                }
+
+                
+                $scope.divide = function(){
+                    $scope.ans = CalcService.divide($scope.Num1, $scope.Num2);
+                    return CalcService.divide($scope.Num1, $scope.Num2);
+                }
+        })
+
+        app.service('CalcService' , function(){
+            this.add = function(a , b){
+              
+                return a+b;  
+            }
+
+            this.sub = function(a,b){
+                return a-b;
+            }
+
+            this.multiply = function(a,b){
+                return a*b;
+            }
+
+            this.divide = function(a,b){
+                return a/b;
+            }
+        })
+        </script>
+    </head>
+
+    <body ng-App="myCalc" ng-controller="calCtrl" >
+           
+        Enter number 1 : <input type="number" ng-model="Num1" /> <br>
+        Enter number 2 : <input type="number" ng-model="Num2" /><br>
+
+        Button Add: <input type = "button" value="add" ng-click="add()"><br>
+        Button Sub: <input type = "button" value="sub" ng-click="sub()"><br>
+        Button Mul: <input type = "button" value="mul" ng-click="multiply()"><br>
+        Button Div: <input type = "button" value="div" ng-click="divide()"><br>
+        
+        <input type="text" ng-model="ans" readonly>
+          
+    
+        </body>
+</html>
