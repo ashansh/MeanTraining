@@ -1,0 +1,21 @@
+h1 {
+    color: slategray;
+}
+h2{
+    color: aliceblue;
+}
+h3{
+    color:  whitesmoke;
+}
+h4{
+    color:  white;
+}
+div{
+    color: whitesmoke;
+}
+
+body{
+    background-image: url('ronaldo.jpg');
+    width: 100%;
+    height: 600px;
+}

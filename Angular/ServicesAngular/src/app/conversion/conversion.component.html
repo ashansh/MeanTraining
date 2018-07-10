@@ -1,0 +1,20 @@
+<h1>
+  Temperature Conversion Service
+</h1>
+
+<form>
+  <fieldset>
+    <legend>
+      Temperature Conversion 
+    </legend>
+
+    Enter Farheneit : <br> <input type="number" name="celcius" [(ngModel)] = "farhen" /> <br><br>
+    To Celcius : <br> <input type ="number" name="cel" [(ngModel)] = "resCel" /> <br><br>
+    Enter Celcius : <br> <input type="number" name="farhen" [(ngModel)] = "cel" /> <br><br>
+    To Farheneit : <br> <input type ="number" name="far" [(ngModel)] = "resFar" /> <br><br>
+
+    <input type="button" value="ConvertCelcius" (click) = "convertCelcius()"/> &nbsp; &nbsp;
+  <input type="button" value="ConvertFarhen" (click)="convertFarheneit()" /><br>
+
+  </fieldset>
+</form>

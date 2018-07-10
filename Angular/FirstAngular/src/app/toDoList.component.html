@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+      
+      
+        <h2> To Do List</h2> &nbsp; &nbsp;
+        Add Item:<input type="text" [(ngModel)]="list"/>
+        <input type="button" value="ADD" (click)="addToList()" />
+        <br>
+        <br>
+        <br>
+      
+        <div *ngFor = "let item of list" />
+        {{ item }}
+      </div>
+      
+
+      
+      

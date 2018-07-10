@@ -1,0 +1,12 @@
+
+  <form>
+    <fieldset>
+      <legend>Rectangle Area And Perimeter</legend>
+    Enter Length: <br> <input type="number" name="length" [(ngModel)]="length"/> <br><br> 
+    Enter Bredth: <br> <input type="number" name="bredth"[(ngModel)]="bredth"/><br> <br>
+    Area : <br><input type="number" name="area" [(ngModel)] = "area" /> <br> <br>
+    Perimeter : <br><input type="number" name="perimeter" [(ngModel)] = "perimeter" /> <br> <br>
+    <input type="button" value="Get Area" (click) = "calculateArea()"/> &nbsp; &nbsp;
+    <input type="button" value="Get Perimeter" (click)="calculatePerimeter()" /><br>
+    </fieldset>
+    </form>

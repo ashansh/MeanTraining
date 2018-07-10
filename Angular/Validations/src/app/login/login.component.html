@@ -1,0 +1,12 @@
+<input type ="text" 
+    name = "userName"
+    [(ngModel)] = "userName"
+    #tuserName = "ngModel" required minlength="3" />
+
+    <h3> Modified : {{tuserName.dirty}} </h3>
+    <h3> UnModified : {{tuserName.pristine}} </h3>
+    <h3> Valid : {{tuserName.valid}} </h3>
+    <h3> Invalid : {{tuserName.invalid}} </h3>
+
+
+    
