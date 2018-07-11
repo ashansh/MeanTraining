@@ -1,0 +1,51 @@
+
+  <form #r = "ngForm" (ngSubmit) = "register(r)">
+  Name : <input type = "text"
+                name = "userName"
+                [(ngModel)] = "userName"
+                #tuserName = "ngModel" required minlength="3"
+                class = "font-color"/>
+          <div *ngIf = "tuserName.invalid" class="error">Name is not Valid</div> <br><br>
+
+  DOB : <input type = "date"
+               name = "userDOB"
+               [(ngModel)] = "userDOB"
+               #tuserDOB = "ngModel" required
+               class = "font-color"/>
+        <div *ngIf = "tuserDOB.invalid" class="error">Date is not Valid</div> <br><br>
+  
+  Email : <input type = "email"
+                 name = "userEMail"
+                 [(ngModel)] = "userEMail"
+                 #tuserEMail = "ngModel" required
+                 class = "font-color"/>
+          <div *ngIf = "tuserEMail.invalid" class="error">EMail is not Valid</div> <br><br>
+  
+  Gender : <div>
+              <input type="radio" name="gender" value="male" [(ngModel)] = "gender"
+                     #tgender = "ngModel" required> Male &nbsp;
+              <input type="radio" name="gender" value="female" [(ngModel)] = "gender"
+                     #tgender = "ngModel" required> Female 
+            </div>
+            <div *ngIf = "tgender.invalid" class="error">Enter gender</div> <br><br>
+            
+
+  Country : <select name="country" value = "" [(ngModel)] = "country" #tcountry = "ngModel" class = "font-color" required>
+              <option value="india">India</option>
+              <option value="USA">USA</option>
+              <option value="UK">UK</option>
+            </select>
+            <div *ngIf = "tcountry.invalid" class="error">Enter Country</div> <br><br>
+
+  Qualification : <div class = "font-color">
+                    <input type="checkbox" name="qualification" value="BE" [(ngModel)] = "qualification1"
+                           #tqualification = "ngModel" required >BE<br>
+                    <input type="checkbox" name="qualification" value="MBA" [(ngModel)] = "qualification2"
+                           #tqualification = "ngModel" required>MBA<br>
+                    <input type="checkbox" name="qualification" value="LLB" [(ngModel)] = "qualification3"
+                           #tqualification = "ngModel" required>LLB<br>
+                  </div>
+                  <div *ngIf = "tqualification.invalid" class="error">Check Qualifications</div> <br><br>
+    <button> Register </button>
+  <div *ngIf = "r.invalid">Form is invalid</div>
+</form>
