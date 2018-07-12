@@ -1,6 +1,7 @@
 
   <form #r = "ngForm" (ngSubmit) = "register(r)">
-  Name : <input type = "text"
+  Name : <input type = "text" 
+  onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))'
                 name = "userName"
                 [(ngModel)] = "userName"
                 #tuserName = "ngModel" required minlength="3"
@@ -13,13 +14,20 @@
                #tuserDOB = "ngModel" required
                class = "font-color"/>
         <div *ngIf = "tuserDOB.invalid" class="error">Date is not Valid</div> <br><br>
-  
+<!--   
   Email : <input type = "email"
                  name = "userEMail"
                  [(ngModel)] = "userEMail"
                  #tuserEMail = "ngModel" required
                  class = "font-color"/>
-          <div *ngIf = "tuserEMail.invalid" class="error">EMail is not Valid</div> <br><br>
+          <div *ngIf = "tuserEMail.invalid" class="error">EMail is not Valid</div> <br><br> -->
+
+          Email :<input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" name="email" ngModel #emailref="ngModel">
+          <div *ngIf="emailref.errors && (emailref.touched || emailref.dirty)" class ="aler alert-danger">
+           <div [hidden]="!emailref.errors?.pattern">
+             Invalid pattern
+           </div> 
+          </div> <br><br>
   
   Gender : <div>
               <input type="radio" name="gender" value="male" [(ngModel)] = "gender"

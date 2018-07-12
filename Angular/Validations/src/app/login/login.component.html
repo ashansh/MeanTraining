@@ -1,4 +1,4 @@
-<input type ="text" 
+<!-- <input type ="text" 
     name = "userName"
     [(ngModel)] = "userName"
     #tuserName = "ngModel" required minlength="3" />
@@ -9,4 +9,37 @@
     <h3> Invalid : {{tuserName.invalid}} </h3>
 
 
-    
+     -->
+
+     <form #loginForm = "ngForm" (ngSubmit)="submit/(loginForm)" class="loginForm" >
+        <input type="text" [(ngModel)] = "name" name="uname"
+                #tname = "ngModel" minlength="3" required/><br>
+        
+        
+        <div *ngIf = "tname.touched && tname.invalid">
+          <div *ngIf = "tname.errors.required" >
+            User Name Not Entered
+          </div>
+         <br> <br>
+        
+            <div *ngIf = "tname.errors.minlength" >
+              User Name Should be Min. of 3 
+            </div>
+          </div> <br>
+        
+        
+        <input type="text" [(ngModel)] ="password" name = "password"
+                #tpassword = "ngModel" pattern="[a-zA-Z][a-zA-Z0-9]*" required/> <br>
+        
+                <div *ngIf = "tpassword.touched && tpassword.invalid">
+                    <div *ngIf = "tpassword.errors.required" >
+                        Password Not Entered
+                    </div> <br>
+                    <div *ngIf = "tpassword.errors.pattern" >
+                        Password Not Match with the pattern
+                  </div> <br>
+                </div> 
+        
+                <br> <button [disabled]= "loginForm.invalid" > Login </button>
+                      
+        </form>

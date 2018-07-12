@@ -1,0 +1,23 @@
+
+
+
+<form [formGroup] ="sampleform" (ngSubmit) = "send()" >
+  <fieldset style = "width: 100px">
+    User name : <input formControlName = "name" /> <br>
+
+    <div *ngIf = "sampleform.get('name').invalid" class="error">
+        User name not Valid
+    </div>
+    
+    Url : <input formControlName = "url" /> <br>
+
+    <div *ngIf = "sampleform.get('url').invalid" class="error">
+      Password not valid
+    </div>
+
+
+    <button type="submit" [disabled] ="sampleform.invalid"> Login </button>
+  </fieldset>
+</form>
+
+Form Values: {{ sampleform.value | json }}

@@ -4,15 +4,18 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ReactiveFormsComponent
   ],
   imports: [
-    BrowserModule , FormsModule
+    BrowserModule , FormsModule , ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
