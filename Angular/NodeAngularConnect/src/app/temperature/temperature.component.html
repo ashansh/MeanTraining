@@ -1,0 +1,12 @@
+<form #f = "ngForm" method = "post" (ngSubmit) = "submit(f)">
+  <input type="text"
+  name ="farhen"
+  [(ngModel)] = "farhen" />
+
+  <input type="text"
+  name ="celcius" 
+  [(ngModel)] = "celcius" readonly />
+
+  <input type="submit" value="Find Celcius" />
+
+</form>
